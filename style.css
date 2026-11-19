@@ -1,5 +1,12 @@
 h1 {
     font-family: 'Arial', sans-serif;
+    text-align: center;
+}
+
+h3 {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    color: #555;
 }
 
 body {
