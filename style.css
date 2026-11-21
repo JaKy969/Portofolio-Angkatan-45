@@ -1,16 +1,257 @@
-h1 {
-    font-family: 'Arial', sans-serif;
-    text-align: center;
-}
-
-h3 {
-    font-family: 'Arial', sans-serif;
-    text-align: center;
-    color: #555;
+/* Reset Dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    background-color: #f0f0f0;
-    margin: 20px;
-    padding: 20px;
+    background-color: #f4f1ea;
+    overflow-x: hidden;
+}
+
+.hero-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    min-height: 600px;
+    position: relative;
+}
+
+/* =========================================
+   BAR NAVIGASI ATAS
+========================================= */
+.maroon-bar {
+    background-color: #690404;
+    height: 48px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 28px;
+    position: relative;
+    z-index: 20;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 18px;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-family: 'Cinzel', serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    position: relative;
+}
+
+.nav-links a.active::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 1.5px;
+    background-color: #ffffff;
+}
+
+.center-banner {
+    background-color: #fbf9f5;
+    height: 100%;
+    padding: 0 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    clip-path: polygon(6% 0%, 94% 0%, 100% 100%, 0% 100%);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.center-banner span {
+    font-family: 'Cinzel', serif;
+    color: #1c1917;
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 1.2px;
+    white-space: nowrap;
+}
+
+.search-icon {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+/* =========================================
+   AREA KONTEN TENGAH
+========================================= */
+.hero-main {
+    flex: 1;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: #e6dfd1;
+}
+
+/* FOTO BACKGROUND UTAMA (z-index: 4) */
+.hero-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100vh; 
+    height: 100vw;
+    background-image: url('assets/bg-home.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform: translate(-50%, -50%) rotate(-90deg);
+    z-index: 4;
+    pointer-events: none;
+}
+
+/* KONTAINER HURUF TERPISAH */
+.folio-split-wrapper {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    user-select: none;
+    padding-top: 15px; 
+    pointer-events: none;
+}
+
+/* Ukuran Huruf Raksasa */
+.letter {
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 700;
+    font-size: clamp(16rem, 36vw, 34rem);
+    color: #ffffff;
+    line-height: 0.75;
+    position: relative;
+    filter: drop-shadow(6px 8px 2px rgba(40, 35, 30, 0.65));
+}
+
+.letter-f { margin-right: -14px; }
+.letter-o1 { margin-right: -12px; }
+.letter-l { margin-right: -12px; }
+.letter-i { margin-right: -14px; }
+
+/* Z-Index Lapisan Huruf Terhadap Foto */
+.behind-bg { z-index: 2; } 
+.front-bg { z-index: 6; }  
+
+/* Teks "porto" di atas huruf o pertama */
+.text-porto {
+    position: absolute;
+    top: 6%;
+    left: 33%;
+    font-family: "Irish Grover", system-ui;
+    font-size: clamp(2.5rem, 5.5vw, 4.8rem);
+    font-weight: 400;
+    color: #e6c242;
+    transform: rotate(6deg);
+    filter: drop-shadow(2px 2px 0px #826510);
+    z-index: 7;
+    white-space: nowrap;
+}
+
+/* Teks "SMA IMMANUEL" digeser ke kanan berpatokan pada huruf 'i' */
+.text-sma {
+    position: absolute;
+    top: 52%;
+    left: 56%;
+    font-family: "Irish Grover", system-ui;
+    font-size: clamp(1.3rem, 3vw, 2.6rem);
+    font-weight: 400;
+    color: #d69c24;
+    letter-spacing: 2px;
+    transform: rotate(-3deg);
+    filter: drop-shadow(2px 2px 0px #523805);
+    z-index: 8;
+    white-space: nowrap;
+}
+
+/* Aksen Garis Merah di pojok kanan atas */
+.burst-lines {
+    position: absolute;
+    top: 10%;
+    right: 8%;
+    width: 75px;
+    height: 75px;
+    transform: rotate(10deg);
+    z-index: 6;
+}
+
+.burst-lines span {
+    position: absolute;
+    background-color: #b82927;
+    border-radius: 4px;
+}
+
+.burst-lines span:nth-child(1) {
+    width: 9px;
+    height: 42px;
+    top: 0;
+    left: 8px;
+    transform: rotate(20deg);
+}
+
+.burst-lines span:nth-child(2) {
+    width: 10px;
+    height: 52px;
+    top: 5px;
+    left: 30px;
+    transform: rotate(40deg);
+}
+
+.burst-lines span:nth-child(3) {
+    width: 9px;
+    height: 40px;
+    top: 28px;
+    left: 46px;
+    transform: rotate(65deg);
+}
+
+/* =========================================
+   TOMBOL PILIH KELAS
+========================================= */
+.cta-container {
+    position: absolute;
+    bottom: 20px;
+    z-index: 10;
+}
+
+.btn-pilih-kelas {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #a83832 0%, #7d1c17 100%);
+    color: #ffffff;
+    font-family: 'Cinzel', serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 12px 42px;
+    border-radius: 40px;
+    border: 1.5px solid rgba(255, 255, 255, 0.35);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.5);
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.btn-pilih-kelas:hover {
+    background: linear-gradient(135deg, #bd423b 0%, #91221c 100%);
+    transform: translateY(-3px);
+}
+
+.btn-pilih-kelas:active {
+    transform: translateY(0);
 }

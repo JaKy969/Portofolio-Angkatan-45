@@ -1,13 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Angkatan 45 - SMA Immanuel Batu</title>
+    <!-- Google Fonts: Fredoka, Cinzel, & Irish Grover -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Fredoka:wght@600;700&family=Irish+Grover&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <title>Portofolio Angkatan-45</title>
-    <link rel="icon" type="image/png" href="iamleader.jpeg">
 </head>
 <body>
-    <h1>Portofolio Angkatan 45</h1>
-    <h3>SMA Immanuel Batu</h3>
+
+    <div class="hero-wrapper">
+        <!-- BAR NAVIGASI ATAS -->
+        <nav class="maroon-bar top-bar">
+            <ul class="nav-links">
+                <li><a href="#home" class="active">HOME</a></li>
+                <li><a href="#about">ABOUT</a></li>
+                <li><a href="#project">PROJECT</a></li>
+            </ul>
+
+            <div class="center-banner">
+                <span>PORTOFOLIO ANGKATAN 45</span>
+            </div>
+
+            <div class="search-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+            </div>
+        </nav>
+
+        <!-- AREA UTAMA -->
+        <main class="hero-main">
+            <!-- 1. FOTO BACKGROUND UTAMA (z-index: 4) -->
+            <div class="hero-bg"></div>
+
+            <!-- 2. KONTAINER HURUF "F o l i o" TERPISAH -->
+            <div class="folio-split-wrapper">
+                <!-- Teks "porto" di sebelah kanan F, di atas huruf o pertama (tidak menempel F) -->
+                <span class="text-porto">porto</span>
+
+                <!-- Huruf-huruf Folio -->
+                <span class="letter letter-f behind-bg">F</span>
+                <span class="letter letter-o1 front-bg">o</span>
+                <span class="letter letter-l behind-bg">l</span>
+                <span class="letter letter-i front-bg">i</span>
+                <span class="letter letter-o2 behind-bg">o</span>
+
+                <!-- Teks "SMA IMMANUEL" di depan foto -->
+                <span class="text-sma">SMA IMMANUEL</span>
+
+                <!-- Aksen Garis Merah di sebelah kanan atas huruf o terakhir -->
+                <div class="burst-lines">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+
+            <!-- 3. TOMBOL PILIH KELAS -->
+            <div class="cta-container">
+                <a href="#kelas" class="btn-pilih-kelas">Pilih Kelas</a>
+            </div>
+        </main>
+    </div>
+
+</body>
 </html>
